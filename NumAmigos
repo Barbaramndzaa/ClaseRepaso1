@@ -1,0 +1,36 @@
+public class ClaseRepasoNUMEROSAMIGOS {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // 2 numeros - divisores de 1 y sumarlos == al segundo
+        int numero1 = 0, numero2 = 0;
+        Scanner sn_teclado = new Scanner(System.in);
+        
+        System.out.println("Dame los dos numeros positivos: ");
+        numero1 = sn_teclado.nextInt();
+        numero2 = sn_teclado.nextInt();
+        
+        //Comprobar positivos
+        //220 220 % 1 - 119 == 0
+        
+        if (sumaDivisores(numero1) == numero2 &&
+            sumaDivisores(numero2) == numero1){
+                System.out.println("Los numeros son amigos");
+            } else {
+                System.out.println("Los numeros no son amigos");
+            }   
+        }    
+
+    public static int sumaDivisores(int numero) { //220,284
+        int suma = 0;
+        for (int i = 1; i < numero; i++){
+                if (numero % i == 0){
+                    suma += i;
+                }
+            }
+        return suma;
+        
+    }
+}  
